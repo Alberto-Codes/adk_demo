@@ -6,6 +6,8 @@ from zoneinfo import ZoneInfo
 from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
 
+from adk_demo.sql_tools import fix_sql, lint_sql
+
 
 # Function to get the access token from gcloud
 def get_gcloud_token():
@@ -137,10 +139,15 @@ root_agent = Agent(
     ),
     name="weather_time_agent",
     description=(
-        "Agent to answer questions about the time and weather in a city using OpenAI endpoint."
+        "Agent to answer questions about the time and weather in a city, and lint or fix SQL code."  # Updated description
     ),
     instruction=(
-        "You are a helpful agent who can answer user questions about the time and weather in a city."
+        "You are a helpful agent who can answer user questions about the time and weather in a city, and also lint or fix provided SQL code.  You can attempt rewriting SQL so it checks out in the sql tools you have.  You are an SQL Senior Analyst"  # Updated instruction
     ),
-    tools=[get_weather, get_current_time],
+    tools=[
+        get_weather,
+        get_current_time,
+        lint_sql,
+        fix_sql,
+    ],  # Use the imported functions
 )

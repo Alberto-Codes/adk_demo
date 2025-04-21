@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from adk-demo!")
+from adk_demo import agent
+
+__all__ = ["agent"]

@@ -1,0 +1,13 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "postCreateCommand": "pip install uv && uv sync --all-groups",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "charliermarsh.ruff",
+        "mechatroner.rainbow-csv"
+      ]
+    }
+  },
+}

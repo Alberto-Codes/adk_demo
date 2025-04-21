@@ -7,7 +7,9 @@ authors = [
     { name = "Alberto Nieto", email = "94092485+Alberto-Codes@users.noreply.github.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "google-adk>=0.2.0",
+]
 
 [project.scripts]
 adk-demo = "adk_demo:main"
